@@ -9,7 +9,6 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
-
 public class CreateLoanResponse {
     private String loanId;
 }

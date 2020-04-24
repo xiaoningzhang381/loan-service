@@ -1,5 +1,6 @@
 package acceptance;
 
+import com.kasasa.loan.LoanServiceApplication;
 import com.kasasa.loan.model.getloan.GetLoanResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,7 +14,7 @@ import java.net.URL;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = LoanServiceApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class GetLoanTest {
 
 	@LocalServerPort

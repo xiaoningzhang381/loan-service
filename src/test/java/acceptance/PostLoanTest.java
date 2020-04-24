@@ -1,25 +1,22 @@
 package acceptance;
 
-import static org.assertj.core.api.Assertions.*;
-
-import java.net.URL;
-
+import com.kasasa.loan.LoanServiceApplication;
 import com.kasasa.loan.model.createloan.CreateLoanRequest;
 import com.kasasa.loan.model.createloan.CreateLoanResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@ExtendWith(SpringExtension.class)
+import java.net.URL;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+
+@SpringBootTest(classes = LoanServiceApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class PostLoanTest {
 
 	@LocalServerPort

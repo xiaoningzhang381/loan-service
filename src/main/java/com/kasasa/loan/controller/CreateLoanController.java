@@ -20,7 +20,11 @@ public class CreateLoanController {
 		this.createLoanService = createLoanService;
 	}
 
-	@RequestMapping(value = "/loan", method = RequestMethod.POST)
+	@RequestMapping(
+			consumes="application/json",
+			produces="application/json",
+			value = "/loan",
+			method = RequestMethod.POST)
 	public ResponseEntity<CreateLoanResponse> createLoan(
 			@RequestBody CreateLoanRequest createLoanRequest
 	)
